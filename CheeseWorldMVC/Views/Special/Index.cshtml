@@ -1,0 +1,52 @@
+﻿@model IEnumerable<CheeseWorldMVC.Models.tblSpecial>
+
+@{
+    ViewBag.Title = "Special List";
+    Layout = "~/Views/Shared/_BootstrapLayout.basic.cshtml";
+}
+
+<h2>Special List</h2>
+
+<p>
+   @if (ViewContext.HttpContext.User.Identity.Name.Equals("Admin"))
+   {
+            @Html.ActionLink("Create New", "Create")
+   }
+</p>
+<table class="table table-bordered table-condensed table-striped">
+    <tr>
+        <th>
+            Headline
+        </th>
+         <th>
+            Content
+        </th>
+        <th>
+            Status
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SpecialHeadline)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SpecialContent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SpecialStatus)
+        </td>
+        <td> 
+            @Html.ActionLink("Details", "Details", new { id = item.SpecialID })
+             @if (ViewContext.HttpContext.User.Identity.Name.Equals("Admin"))
+            {
+            @Html.ActionLink("Edit", "Edit", new { id = item.SpecialID }) <br />   
+            @Html.ActionLink("Delete", "Delete", new { id = item.SpecialID })
+            }
+        </td>
+    </tr>
+}
+</table>

@@ -1,0 +1,59 @@
+﻿@model CheeseWorldMVC.Models.tblSpecial
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_BootstrapLayout.basic.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+
+       @* <div class="editor-label">
+            @Html.LabelFor(model => model.SpecialID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SpecialID)
+            @Html.ValidationMessageFor(model => model.SpecialID)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SpecialHeadline)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SpecialHeadline)
+            @Html.ValidationMessageFor(model => model.SpecialHeadline)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SpecialContent)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.SpecialContent)
+            @Html.ValidationMessageFor(model => model.SpecialContent)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SpecialStatus)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SpecialStatus)
+            @Html.ValidationMessageFor(model => model.SpecialStatus)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

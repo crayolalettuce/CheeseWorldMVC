@@ -1,0 +1,54 @@
+﻿@model CheeseWorldMVC.Models.tblSpecial
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_BootstrapLayout.basic.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>tblSpecial</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SpecialID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SpecialID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SpeacialHeadline)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SpeacialHeadline)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SpecialHeadline)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SpecialHeadline)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SpecialContent)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SpecialContent)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SpecialStatus)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SpecialStatus)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

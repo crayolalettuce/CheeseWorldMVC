@@ -1,0 +1,46 @@
+﻿@model IEnumerable<CheeseWorldMVC.Models.tblMeat>
+
+@{
+    ViewBag.Title = "Meat Menu List";
+}
+
+<h2>Meat Menu List</h2>
+
+<table class="table table-bordered table-condensed table-striped">
+    <tr>
+        <th>
+            Meat Name
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+           Category
+        </th>
+       @* <th>
+           Score
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeatName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeatRetailPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeatType)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.MeatScore)
+        </td>*@
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.MeatID }) 
+        </td>
+    </tr>
+}
+
+</table>

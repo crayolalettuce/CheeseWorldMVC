@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CheeseWorld_DatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="CheeseWorld_DatabaseModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="CheeseWorld_DatabaseModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblCheese" EntityType="CheeseWorld_DatabaseModel.Store.tblCheese" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblCheeseRating" EntityType="CheeseWorld_DatabaseModel.Store.tblCheeseRating" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblCoupons" EntityType="CheeseWorld_DatabaseModel.Store.tblCoupons" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblCustomer" EntityType="CheeseWorld_DatabaseModel.Store.tblCustomer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblDiscount" EntityType="CheeseWorld_DatabaseModel.Store.tblDiscount" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblEmployee" EntityType="CheeseWorld_DatabaseModel.Store.tblEmployee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblMeat" EntityType="CheeseWorld_DatabaseModel.Store.tblMeat" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblMeatRating" EntityType="CheeseWorld_DatabaseModel.Store.tblMeatRating" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblMiscProducts" EntityType="CheeseWorld_DatabaseModel.Store.tblMiscProducts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblMiscRating" EntityType="CheeseWorld_DatabaseModel.Store.tblMiscRating" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblNews" EntityType="CheeseWorld_DatabaseModel.Store.tblNews" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblReservation" EntityType="CheeseWorld_DatabaseModel.Store.tblReservation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblSpecial" EntityType="CheeseWorld_DatabaseModel.Store.tblSpecial" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblSubscription" EntityType="CheeseWorld_DatabaseModel.Store.tblSubscription" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblTransaction" EntityType="CheeseWorld_DatabaseModel.Store.tblTransaction" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_tblCheeseRating_tblCheese" Association="CheeseWorld_DatabaseModel.Store.FK_tblCheeseRating_tblCheese">
+      <End Role="tblCheese" EntitySet="tblCheese" />
+      <End Role="tblCheeseRating" EntitySet="tblCheeseRating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCheeseRating_tblCustomer" Association="CheeseWorld_DatabaseModel.Store.FK_tblCheeseRating_tblCustomer">
+      <End Role="tblCustomer" EntitySet="tblCustomer" />
+      <End Role="tblCheeseRating" EntitySet="tblCheeseRating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblMeatRating_tblCustomer" Association="CheeseWorld_DatabaseModel.Store.FK_tblMeatRating_tblCustomer">
+      <End Role="tblCustomer" EntitySet="tblCustomer" />
+      <End Role="tblMeatRating" EntitySet="tblMeatRating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblMeatRating_tblMeat" Association="CheeseWorld_DatabaseModel.Store.FK_tblMeatRating_tblMeat">
+      <End Role="tblMeat" EntitySet="tblMeat" />
+      <End Role="tblMeatRating" EntitySet="tblMeatRating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblMiscRating_tblCustomer" Association="CheeseWorld_DatabaseModel.Store.FK_tblMiscRating_tblCustomer">
+      <End Role="tblCustomer" EntitySet="tblCustomer" />
+      <End Role="tblMiscRating" EntitySet="tblMiscRating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblMiscRating_tblMiscProducts" Association="CheeseWorld_DatabaseModel.Store.FK_tblMiscRating_tblMiscProducts">
+      <End Role="tblMiscProducts" EntitySet="tblMiscProducts" />
+      <End Role="tblMiscRating" EntitySet="tblMiscRating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblReservation_tblCheese" Association="CheeseWorld_DatabaseModel.Store.FK_tblReservation_tblCheese">
+      <End Role="tblCheese" EntitySet="tblCheese" />
+      <End Role="tblReservation" EntitySet="tblReservation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblReservation_tblCustomer" Association="CheeseWorld_DatabaseModel.Store.FK_tblReservation_tblCustomer">
+      <End Role="tblCustomer" EntitySet="tblCustomer" />
+      <End Role="tblReservation" EntitySet="tblReservation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblReservation_tblMeat" Association="CheeseWorld_DatabaseModel.Store.FK_tblReservation_tblMeat">
+      <End Role="tblMeat" EntitySet="tblMeat" />
+      <End Role="tblReservation" EntitySet="tblReservation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblReservation_tblMiscProducts" Association="CheeseWorld_DatabaseModel.Store.FK_tblReservation_tblMiscProducts">
+      <End Role="tblMiscProducts" EntitySet="tblMiscProducts" />
+      <End Role="tblReservation" EntitySet="tblReservation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSubscription_tblCustomer" Association="CheeseWorld_DatabaseModel.Store.FK_tblSubscription_tblCustomer">
+      <End Role="tblCustomer" EntitySet="tblCustomer" />
+      <End Role="tblSubscription" EntitySet="tblSubscription" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblTransaction_tblCheese" Association="CheeseWorld_DatabaseModel.Store.FK_tblTransaction_tblCheese">
+      <End Role="tblCheese" EntitySet="tblCheese" />
+      <End Role="tblTransaction" EntitySet="tblTransaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblTransaction_tblCoupons" Association="CheeseWorld_DatabaseModel.Store.FK_tblTransaction_tblCoupons">
+      <End Role="tblCoupons" EntitySet="tblCoupons" />
+      <End Role="tblTransaction" EntitySet="tblTransaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblTransaction_tblDiscount" Association="CheeseWorld_DatabaseModel.Store.FK_tblTransaction_tblDiscount">
+      <End Role="tblDiscount" EntitySet="tblDiscount" />
+      <End Role="tblTransaction" EntitySet="tblTransaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblTransaction_tblEmployee" Association="CheeseWorld_DatabaseModel.Store.FK_tblTransaction_tblEmployee">
+      <End Role="tblEmployee" EntitySet="tblEmployee" />
+      <End Role="tblTransaction" EntitySet="tblTransaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblTransaction_tblMeat" Association="CheeseWorld_DatabaseModel.Store.FK_tblTransaction_tblMeat">
+      <End Role="tblMeat" EntitySet="tblMeat" />
+      <End Role="tblTransaction" EntitySet="tblTransaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblTransaction_tblMiscProducts" Association="CheeseWorld_DatabaseModel.Store.FK_tblTransaction_tblMiscProducts">
+      <End Role="tblMiscProducts" EntitySet="tblMiscProducts" />
+      <End Role="tblTransaction" EntitySet="tblTransaction" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tblCheese">
+    <Key>
+      <PropertyRef Name="CheeseID" />
+    </Key>
+    <Property Name="CheeseID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CheeseName" Type="varchar" MaxLength="50" />
+    <Property Name="CheeseCostPrice" Type="decimal" Scale="2" />
+    <Property Name="CheeseQuantity" Type="decimal" Scale="2" />
+    <Property Name="CheeseProvider" Type="varchar" MaxLength="50" />
+    <Property Name="CheesePurchaseDate" Type="date" />
+    <Property Name="CheeseExpirationDate" Type="date" />
+    <Property Name="CheeseRetailPrice" Type="decimal" Scale="2" />
+    <Property Name="CheeseType" Type="varchar" MaxLength="50" />
+    <Property Name="CheesePasturized" Type="varchar" MaxLength="50" />
+    <Property Name="CheeseScore" Type="numeric" />
+    <Property Name="CheeseDescription" Type="varchar(max)" />
+    <Property Name="CheeseGroup" Type="int" />
+  </EntityType>
+  <EntityType Name="tblCheeseRating">
+    <Key>
+      <PropertyRef Name="CheeseRatingID" />
+    </Key>
+    <Property Name="CheeseRatingID" Type="int" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="CheeseID" Type="int" />
+    <Property Name="RatingScore" Type="numeric" />
+    <Property Name="CustomerComment" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="tblCoupons">
+    <Key>
+      <PropertyRef Name="CouponID" />
+    </Key>
+    <Property Name="CouponID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CouponType" Type="varchar" MaxLength="50" />
+    <Property Name="CouponValue" Type="decimal" Scale="2" />
+    <Property Name="CouponCode" Type="int" />
+  </EntityType>
+  <EntityType Name="tblCustomer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerFirstName" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerLastName" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerStreetAddress" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerCity" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerState" Type="varchar" MaxLength="2" />
+    <Property Name="CustomerPhone" Type="numeric" />
+    <Property Name="CustomerZipCode" Type="int" />
+    <Property Name="CustomerEmail" Type="varchar(max)" />
+    <Property Name="CustomerPassword" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblDiscount">
+    <Key>
+      <PropertyRef Name="DiscountID" />
+    </Key>
+    <Property Name="DiscountID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DiscountType" Type="varchar" MaxLength="50" />
+    <Property Name="DiscountValue" Type="decimal" Scale="2" />
+  </EntityType>
+  <EntityType Name="tblEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeFirstName" Type="varchar" MaxLength="50" />
+    <Property Name="EmployeeLastName" Type="varchar" MaxLength="50" />
+    <Property Name="EmployeeRole" Type="varchar" MaxLength="1" />
+    <Property Name="EmployeeLogin" Type="int" />
+  </EntityType>
+  <EntityType Name="tblMeat">
+    <Key>
+      <PropertyRef Name="MeatID" />
+    </Key>
+    <Property Name="MeatID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MeatName" Type="varchar" MaxLength="50" />
+    <Property Name="MeatCostPrice" Type="decimal" Scale="2" />
+    <Property Name="MeatQuantity" Type="decimal" Scale="2" />
+    <Property Name="MeatProvider" Type="varchar" MaxLength="50" />
+    <Property Name="MeatPurchaseDate" Type="date" />
+    <Property Name="MeatExpirationDate" Type="date" />
+    <Property Name="MeatRetailPrice" Type="decimal" Scale="2" />
+    <Property Name="MeatScore" Type="numeric" />
+    <Property Name="MeatDescription" Type="varchar(max)" />
+    <Property Name="MeatType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblMeatRating">
+    <Key>
+      <PropertyRef Name="MeatRatingID" />
+    </Key>
+    <Property Name="MeatRatingID" Type="int" Nullable="false" />
+    <Property Name="MeatID" Type="int" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="CustomerComment" Type="varchar(max)" />
+    <Property Name="RatingScore" Type="decimal" Scale="2" />
+  </EntityType>
+  <EntityType Name="tblMiscProducts">
+    <Key>
+      <PropertyRef Name="MiscProductID" />
+    </Key>
+    <Property Name="MiscProductID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MiscProductName" Type="varchar" MaxLength="50" />
+    <Property Name="MiscProductCostPrice" Type="decimal" Scale="2" />
+    <Property Name="MiscProductQuantity" Type="decimal" Scale="2" />
+    <Property Name="MiscProductProvider" Type="varchar" MaxLength="50" />
+    <Property Name="MiscProductRetailPrice" Type="decimal" Scale="2" />
+    <Property Name="MiscProductType" Type="varchar" MaxLength="50" />
+    <Property Name="MiscProductScore" Type="numeric" />
+    <Property Name="MiscProductDescription" Type="varchar(max)" />
+    <Property Name="MiscProductPurchaseDate" Type="date" />
+  </EntityType>
+  <EntityType Name="tblMiscRating">
+    <Key>
+      <PropertyRef Name="MiscRatingID" />
+    </Key>
+    <Property Name="MiscRatingID" Type="int" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="MiscProductID" Type="int" />
+    <Property Name="RatingScore" Type="decimal" Scale="2" />
+    <Property Name="CustomerComment" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="tblNews">
+    <Key>
+      <PropertyRef Name="newsID" />
+    </Key>
+    <Property Name="newsID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NewsHeadline" Type="varchar(max)" />
+    <Property Name="NewsContent" Type="varchar(max)" />
+    <Property Name="NewsStatus" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="tblReservation">
+    <Key>
+      <PropertyRef Name="ReservationID" />
+    </Key>
+    <Property Name="ReservationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EstTotalCost" Type="decimal" Scale="2" />
+    <Property Name="CheeseID" Type="int" />
+    <Property Name="MeatID" Type="int" />
+    <Property Name="MiscProductID" Type="int" />
+    <Property Name="CustomerID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblSpecial">
+    <Key>
+      <PropertyRef Name="SpecialID" />
+    </Key>
+    <Property Name="SpecialID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SpeacialHeadline" Type="varchar(max)" />
+    <Property Name="SpecialHeadline" Type="varchar(max)" />
+    <Property Name="SpecialContent" Type="varchar(max)" />
+    <Property Name="SpecialStatus" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="tblSubscription">
+    <Key>
+      <PropertyRef Name="SubscriptionID" />
+    </Key>
+    <Property Name="SubscriptionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SubscriptionEmail" Type="nchar" MaxLength="10" />
+    <Property Name="CustomerID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblTransaction">
+    <Key>
+      <PropertyRef Name="TransactionID" />
+    </Key>
+    <Property Name="TransactionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Discount" Type="decimal" Scale="2" />
+    <Property Name="NetTotal" Type="decimal" Scale="2" />
+    <Property Name="Tax" Type="decimal" Scale="2" />
+    <Property Name="Total" Type="decimal" Scale="2" />
+    <Property Name="Coupons" Type="decimal" Scale="2" />
+    <Property Name="TransactionDate" Type="date" />
+    <Property Name="PaymentMethod" Type="varchar" MaxLength="50" />
+    <Property Name="EmployeeID" Type="int" />
+    <Property Name="DiscountID" Type="int" />
+    <Property Name="CheeseID" Type="int" />
+    <Property Name="MeatID" Type="int" />
+    <Property Name="MiscProductID" Type="int" />
+    <Property Name="CouponID" Type="int" />
+    <Property Name="transactionItem" Type="varchar(max)" />
+  </EntityType>
+  <Association Name="FK_tblCheeseRating_tblCheese">
+    <End Role="tblCheese" Type="CheeseWorld_DatabaseModel.Store.tblCheese" Multiplicity="0..1" />
+    <End Role="tblCheeseRating" Type="CheeseWorld_DatabaseModel.Store.tblCheeseRating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCheese">
+        <PropertyRef Name="CheeseID" />
+      </Principal>
+      <Dependent Role="tblCheeseRating">
+        <PropertyRef Name="CheeseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCheeseRating_tblCustomer">
+    <End Role="tblCustomer" Type="CheeseWorld_DatabaseModel.Store.tblCustomer" Multiplicity="0..1" />
+    <End Role="tblCheeseRating" Type="CheeseWorld_DatabaseModel.Store.tblCheeseRating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCustomer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="tblCheeseRating">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblMeatRating_tblCustomer">
+    <End Role="tblCustomer" Type="CheeseWorld_DatabaseModel.Store.tblCustomer" Multiplicity="0..1" />
+    <End Role="tblMeatRating" Type="CheeseWorld_DatabaseModel.Store.tblMeatRating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCustomer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="tblMeatRating">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblMeatRating_tblMeat">
+    <End Role="tblMeat" Type="CheeseWorld_DatabaseModel.Store.tblMeat" Multiplicity="0..1" />
+    <End Role="tblMeatRating" Type="CheeseWorld_DatabaseModel.Store.tblMeatRating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMeat">
+        <PropertyRef Name="MeatID" />
+      </Principal>
+      <Dependent Role="tblMeatRating">
+        <PropertyRef Name="MeatID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblMiscRating_tblCustomer">
+    <End Role="tblCustomer" Type="CheeseWorld_DatabaseModel.Store.tblCustomer" Multiplicity="0..1" />
+    <End Role="tblMiscRating" Type="CheeseWorld_DatabaseModel.Store.tblMiscRating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCustomer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="tblMiscRating">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblMiscRating_tblMiscProducts">
+    <End Role="tblMiscProducts" Type="CheeseWorld_DatabaseModel.Store.tblMiscProducts" Multiplicity="0..1" />
+    <End Role="tblMiscRating" Type="CheeseWorld_DatabaseModel.Store.tblMiscRating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMiscProducts">
+        <PropertyRef Name="MiscProductID" />
+      </Principal>
+      <Dependent Role="tblMiscRating">
+        <PropertyRef Name="MiscProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblReservation_tblCheese">
+    <End Role="tblCheese" Type="CheeseWorld_DatabaseModel.Store.tblCheese" Multiplicity="0..1" />
+    <End Role="tblReservation" Type="CheeseWorld_DatabaseModel.Store.tblReservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCheese">
+        <PropertyRef Name="CheeseID" />
+      </Principal>
+      <Dependent Role="tblReservation">
+        <PropertyRef Name="CheeseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblReservation_tblCustomer">
+    <End Role="tblCustomer" Type="CheeseWorld_DatabaseModel.Store.tblCustomer" Multiplicity="0..1" />
+    <End Role="tblReservation" Type="CheeseWorld_DatabaseModel.Store.tblReservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCustomer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="tblReservation">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblReservation_tblMeat">
+    <End Role="tblMeat" Type="CheeseWorld_DatabaseModel.Store.tblMeat" Multiplicity="0..1" />
+    <End Role="tblReservation" Type="CheeseWorld_DatabaseModel.Store.tblReservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMeat">
+        <PropertyRef Name="MeatID" />
+      </Principal>
+      <Dependent Role="tblReservation">
+        <PropertyRef Name="MeatID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblReservation_tblMiscProducts">
+    <End Role="tblMiscProducts" Type="CheeseWorld_DatabaseModel.Store.tblMiscProducts" Multiplicity="0..1" />
+    <End Role="tblReservation" Type="CheeseWorld_DatabaseModel.Store.tblReservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMiscProducts">
+        <PropertyRef Name="MiscProductID" />
+      </Principal>
+      <Dependent Role="tblReservation">
+        <PropertyRef Name="MiscProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSubscription_tblCustomer">
+    <End Role="tblCustomer" Type="CheeseWorld_DatabaseModel.Store.tblCustomer" Multiplicity="0..1" />
+    <End Role="tblSubscription" Type="CheeseWorld_DatabaseModel.Store.tblSubscription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCustomer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="tblSubscription">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblTransaction_tblCheese">
+    <End Role="tblCheese" Type="CheeseWorld_DatabaseModel.Store.tblCheese" Multiplicity="0..1" />
+    <End Role="tblTransaction" Type="CheeseWorld_DatabaseModel.Store.tblTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCheese">
+        <PropertyRef Name="CheeseID" />
+      </Principal>
+      <Dependent Role="tblTransaction">
+        <PropertyRef Name="CheeseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblTransaction_tblCoupons">
+    <End Role="tblCoupons" Type="CheeseWorld_DatabaseModel.Store.tblCoupons" Multiplicity="0..1" />
+    <End Role="tblTransaction" Type="CheeseWorld_DatabaseModel.Store.tblTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCoupons">
+        <PropertyRef Name="CouponID" />
+      </Principal>
+      <Dependent Role="tblTransaction">
+        <PropertyRef Name="CouponID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblTransaction_tblDiscount">
+    <End Role="tblDiscount" Type="CheeseWorld_DatabaseModel.Store.tblDiscount" Multiplicity="0..1" />
+    <End Role="tblTransaction" Type="CheeseWorld_DatabaseModel.Store.tblTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDiscount">
+        <PropertyRef Name="DiscountID" />
+      </Principal>
+      <Dependent Role="tblTransaction">
+        <PropertyRef Name="DiscountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblTransaction_tblEmployee">
+    <End Role="tblEmployee" Type="CheeseWorld_DatabaseModel.Store.tblEmployee" Multiplicity="0..1" />
+    <End Role="tblTransaction" Type="CheeseWorld_DatabaseModel.Store.tblTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEmployee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="tblTransaction">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblTransaction_tblMeat">
+    <End Role="tblMeat" Type="CheeseWorld_DatabaseModel.Store.tblMeat" Multiplicity="0..1" />
+    <End Role="tblTransaction" Type="CheeseWorld_DatabaseModel.Store.tblTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMeat">
+        <PropertyRef Name="MeatID" />
+      </Principal>
+      <Dependent Role="tblTransaction">
+        <PropertyRef Name="MeatID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblTransaction_tblMiscProducts">
+    <End Role="tblMiscProducts" Type="CheeseWorld_DatabaseModel.Store.tblMiscProducts" Multiplicity="0..1" />
+    <End Role="tblTransaction" Type="CheeseWorld_DatabaseModel.Store.tblTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMiscProducts">
+        <PropertyRef Name="MiscProductID" />
+      </Principal>
+      <Dependent Role="tblTransaction">
+        <PropertyRef Name="MiscProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

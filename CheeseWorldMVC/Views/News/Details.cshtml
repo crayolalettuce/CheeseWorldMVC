@@ -1,0 +1,29 @@
+﻿@model CheeseWorldMVC.Models.tblNew
+
+@{
+    ViewBag.Title = "News Details";
+}
+
+<h2> @Html.DisplayFor(model => model.NewsHeadline) News Details</h2>
+
+    <fieldset>
+        <legend>tblNew</legend>
+    
+        <div class="display-field">
+            @Html.DisplayFor(model => model.NewsHeadline)
+        </div>
+    
+        <div class="display-field">
+            @Html.DisplayFor(model => model.NewsContent)
+        </div>
+    
+        <div class="display-field">
+            @Html.DisplayFor(model => model.NewsStatus)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.newsID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+

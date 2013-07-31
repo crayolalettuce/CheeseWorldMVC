@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - Cheese World</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../Content/jd.gallery.css" type="text/css" media="screen" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/Scripts/js")
+        
+               
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="float-center">
+                    <p class="site-title"><img src="~/Images/logo2.png"></p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <ul class="nav">
+                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Cheese","Index", "Cheese")</li>
+                                <li>@Html.ActionLink("Meat", "Index", "Meat")</li>
+                                <li>@Html.ActionLink("Misc. Product", "Index", "Misc")</li>
+                                <li>@Html.ActionLink("Special", "Index", "Special")</li>
+                                <li>@Html.ActionLink("Platter", "Index", "Platter")</li>
+                                <li>@Html.ActionLink("Gallery", "Index", "Gallery")</li>
+                                <li>@Html.ActionLink("About Us", "About", "Home")</li>
+                                <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+       
+        <div id="body">
+            @*@RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>*@
+        </div>
+        
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p> Copyright © @DateTime.Now.Year Cheese-World. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

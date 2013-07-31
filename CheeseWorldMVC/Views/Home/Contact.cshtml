@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Contact Us";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+@using (Html.BeginForm())
+{ 
+    @Html.Label("Name :")
+    @Html.TextBox("Name")<br />
+    
+    @Html.Label("Email :")
+    @Html.TextBox("Email")<br />
+    
+    @Html.Label("Phone Number :")
+    @Html.TextBox("PhoneNumber")<br />
+    
+    @Html.Label("Message :")
+    @Html.TextArea("Message")<br />
+    
+    <button type="submit">Submit</button>
+}
+
+<h2>Our Contact Information</h2>
+<section class="contact">
+    <header>
+        <h3>Phone</h3>
+    </header>
+    <p>
+       <span>718-263-1933</span>
+    </p>
+   
+</section>
+
+<section class="contact">
+    <header>
+        <h3>Email</h3>
+    </header>
+    <p>
+       <span><a href="mailto:marketing@cheeseworld.com">marketing@cheeseworld.com</a></span>
+    </p>
+</section>
+
+<section class="contact">
+    <header>
+        <h3>Address</h3>
+    </header>
+    <p>
+        71-48 Austin Street<br />
+        Forest Hills, NY 11375
+    </p>
+</section>

@@ -1,0 +1,58 @@
+﻿@model CheeseWorldMVC.Models.tblNew
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_BootstrapLayout.basic.cshtml";
+}
+
+<h2>Create</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+    
+        <fieldset>
+            <legend>Create News</legend>
+    
+           @* <div class="editor-label">
+                @Html.LabelFor(model => model.newsID)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.newsID)
+                @Html.ValidationMessageFor(model => model.newsID)
+            </div>*@
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.NewsHeadline)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.NewsHeadline)
+                @Html.ValidationMessageFor(model => model.NewsHeadline)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.NewsContent)
+            </div>
+            <div class="editor-field">
+                @Html.TextAreaFor(model => model.NewsContent)
+                @Html.ValidationMessageFor(model => model.NewsContent)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.NewsStatus)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.NewsStatus)
+                @Html.ValidationMessageFor(model => model.NewsStatus)
+            </div>
+    
+            <p>
+                <input type="submit" value="Create" />
+               
+            </p>
+        </fieldset>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+

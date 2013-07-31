@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CheeseWorldMVC.Models.tblNew>
+
+@{
+    ViewBag.Title = "News List";
+}
+
+<h2>News List </h2>
+
+    <p> @if (ViewContext.HttpContext.User.Identity.Name.Equals("Admin"))
+        {
+            @Html.ActionLink("Create New", "Create")
+        }
+    </p>
+    <table class="table table-bordered table-condensed table-striped">
+        <tr>
+            <th>
+                News Headline
+            </th>
+            <th>
+                Content
+            </th>
+            <th>
+                Status
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewsHeadline)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewsContent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewsStatus)
+            </td>
+            <td>
+            @Html.ActionLink("Details", "Details", new { id = item.newsID }) 
+            @if (ViewContext.HttpContext.User.Identity.Name.Equals("Admin"))
+            {
+            @Html.ActionLink("Edit", "Edit", new { id = item.newsID })<br />              
+            @Html.ActionLink("Delete", "Delete", new { id = item.newsID  })
+            }
+              
+            </td>
+        </tr>
+    }
+    
+    </table>

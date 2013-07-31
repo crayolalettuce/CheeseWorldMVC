@@ -1,0 +1,39 @@
+﻿@model CheeseWorldMVC.Models.tblMiscProduct
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+<table>
+    <tr>
+    <td> Name : </td>
+    <td>
+        <div class="display-field">
+                @Html.DisplayFor(model => model.MiscProductName)
+        </div>
+    </td>
+    </tr> 
+     <tr>
+    <td> Price : </td>
+    <td>
+        <div class="display-field">
+                @Html.DisplayFor(model => model.MiscProductRetailPrice)
+        </div>
+    </td>
+    </tr> 
+     <tr>
+    <td> Name : </td>
+    <td>
+        <div class="display-field">
+                @Html.DisplayFor(model => model.MiscProductDescription)
+        </div>
+    </td>
+    </tr> 
+ </table>
+</fieldset>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
